@@ -1,0 +1,68 @@
+From 587ba199d961e09dc1082bd4d8e4bdb6e0cd2649 Mon Sep 17 00:00:00 2001
+From: Sergii Piatakov <sergii.piatakov@globallogic.com>
+Date: Thu, 15 Nov 2018 15:43:25 +0200
+Subject: [PATCH 1/2] Save current changes
+
+---
+ calculator.cpp    |  5 +++++
+ calculator.h      |  5 +++++
+ calculator.h.orig | 16 ++++++++++++++++
+ 3 files changed, 26 insertions(+)
+ create mode 100644 calculator.h.orig
+
+diff --git a/calculator.cpp b/calculator.cpp
+index dc9ed72..1b0d1e3 100644
+--- a/calculator.cpp
++++ b/calculator.cpp
+@@ -13,3 +13,8 @@ int Calculator::Sub (double a, double b)
+ {
+     return Add (a, -b);
+ }
++
++int Calculator::Mul (double a, double b)
++{
++    return a * b + 0.5;
++}
+diff --git a/calculator.h b/calculator.h
+index 3740907..d19cb87 100644
+--- a/calculator.h
++++ b/calculator.h
+@@ -4,8 +4,13 @@
+ class Calculator
+ {
+     public:
++<<<<<<< HEAD
+         int Add (double, double);
+         int Sub (double, double);
++=======
++
++        int Mul (double, double);
++>>>>>>> e0ea21b... add a multiplication operation
+ };
+ 
+ #endif//CALCULATOR_H
+diff --git a/calculator.h.orig b/calculator.h.orig
+new file mode 100644
+index 0000000..95ba83d
+--- /dev/null
++++ b/calculator.h.orig
+@@ -0,0 +1,16 @@
++#ifndef CALCULATOR_H
++#define CALCULATOR_H
++
++class Calculator
++{
++    public:
++<<<<<<< HEAD
++        int Add (double, double);
++        int Sub (double, double);
++=======
++        int Add (int, int);
++        int Mul (double, double);
++>>>>>>> e0ea21b... add a multiplication operation
++};
++
++#endif//CALCULATOR_H
+-- 
+2.17.1
+
